@@ -5,7 +5,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-// The MapHandler function maps (duh...) the URLs with their shortened URL
+// The MapHandler function maps the URLs with their shortened URL
 func MapHandler(shortPath map[string]string, fallback http.Handler) http.HandlerFunc {
     return func(w http.ResponseWriter, r *http.Request) {
         if dest, ok := shortPath[r.URL.Path]; ok {
